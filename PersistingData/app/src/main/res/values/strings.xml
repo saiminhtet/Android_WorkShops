@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">PersistingData</string>
+    <string name="option1">Shared Preferences</string>
+    <string name="option2">Preference Activity</string>
+    <string name="option3">Files</string>
+    <string name="option4">External Storage</string>
+    <string name="option5">Network</string>
+    <string name="username">User Name</string>
+    <string name="hostname">Hostname</string>
+    <string name="run">Run</string>
+    <string name="write">Write</string>
+    <string name="read">Read</string>
+
+</resources>

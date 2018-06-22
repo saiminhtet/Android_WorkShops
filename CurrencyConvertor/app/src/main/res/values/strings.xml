@@ -1,0 +1,20 @@
+<resources>
+    <string name="home">SGD$</string>
+    <string-array name="currencies">
+        <item>US</item>
+        <item>MYR</item>
+        <item>AUD</item>
+    </string-array>
+    <string-array name="currencyV">
+        <item >1.4</item>
+        <item >1.02</item>
+        <item >0.35</item>
+    </string-array>
+    <string name="app_name">App Name</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="item1_value">Item1 spelling</string>
+    <string name="item2_value">Item2 spelling</string>
+    <string name="item3_value">Item3 spelling</string>
+    <string name="downarrow">&#x2193;</string>
+    <string name="uparrow">&#x2191;</string>
+</resources>

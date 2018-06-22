@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="Your Preferences">
+    <EditTextPreference android:title="Hostname"
+        android:key="hostname"
+        android:summary="Enter hostname here"/>
+    <EditTextPreference android:title="Username"
+        android:key="username"
+        android:summary="Enter username here"/>
+</PreferenceScreen>

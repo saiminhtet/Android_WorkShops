@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Explicit_And_Implicit_Intents</string>
+    <string name="option1">View URI</string>
+    <string name="option2">Call number</string>
+    <string name="option3">Dial number</string>
+    <string name="option4">Geo</string>
+    <string name="option5">Image capture</string>
+    <string name="option6">view contact</string>
+    <string name="option7">edit contact</string>
+    <string name="option8">MyBrowser</string>
+    <string name="option9">Another activity</string>
+    <string name="option10">Notification</string>
+</resources>

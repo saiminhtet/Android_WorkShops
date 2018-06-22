@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ViewsAndActivities</string>
+    <string name="hello">Hello!</string>
+    <string name="clickme">Click Me!</string>
+    <string name="item1_value">Item1 spelling</string>
+    <string name="item2_value">Item2 spelling</string>
+    <string name="item3_value">Item3 spelling</string>
+</resources>
