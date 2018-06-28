@@ -4,6 +4,7 @@ import android.app.SearchManager;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -27,22 +28,33 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        StrictMode.setThreadPolicy(StrictMode.ThreadPolicy.LAX);
-        List<Book> books = Book.listBook();
-        final ListView lv1 = (ListView) findViewById(R.id.book_list);
-//        BookAdapter adapter = new BookAdapter(this, R.layout.listview, books);
-//        //setListAdapter(adapter);
-        lv1.setAdapter(new BookAdapter(this, R.layout.listview, books));
-        lv1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        new AsyncTask<String, Void, BookAdapter>(){
             @Override
-            public void onItemClick(AdapterView<?> a, View v, int position, long id) {
-                Object bookobject = lv1.getItemAtPosition(position);
-                Book booksitem = (Book) bookobject;
-                Intent intent = new Intent(getApplicationContext(),BookDetailsActivity.class);
-                intent.putExtra("bookid", booksitem.get("BookID"));
-                startActivity(intent);
+            protected BookAdapter  doInBackground(String... params) {
+                List<Book> books = Book.listBook();
+                BookAdapter adapter = new BookAdapter(getApplicationContext(),R.layout.listview, books);
+                return adapter;
             }
-        });
+            @Override
+            protected void onPostExecute(BookAdapter adapter){
+                final ListView lv1 = (ListView) findViewById(R.id.book_list);
+                lv1.setAdapter(adapter);
+            }
+        }.execute();
+//        StrictMode.setThreadPolicy(StrictMode.ThreadPolicy.LAX);
+//        List<Book> books = Book.listBook();
+//        final ListView lv1 = (ListView) findViewById(R.id.book_list);
+//        lv1.setAdapter(new BookAdapter(this, R.layout.listview, books));
+//        lv1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> a, View v, int position, long id) {
+//                Object bookobject = lv1.getItemAtPosition(position);
+//                Book booksitem = (Book) bookobject;
+//                Intent intent = new Intent(getApplicationContext(),BookDetailsActivity.class);
+//                intent.putExtra("bookid", booksitem.get("BookID"));
+//                startActivity(intent);
+//            }
+//        });
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
