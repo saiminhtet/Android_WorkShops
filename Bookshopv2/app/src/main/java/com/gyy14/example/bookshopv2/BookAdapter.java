@@ -1,5 +1,6 @@
 package com.gyy14.example.bookshopv2;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -28,6 +29,7 @@ public class BookAdapter extends ArrayAdapter<Book> {
         this.books = books;
     }
 
+    @SuppressLint("StaticFieldLeak")
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = (LayoutInflater) getContext()
@@ -42,9 +44,7 @@ public class BookAdapter extends ArrayAdapter<Book> {
             txttitle.setText(bookobj.get("Title"));
             TextView txtcategoryname = (TextView) v.findViewById(R.id.Author);
             txtcategoryname.setText(bookobj.get("Author"));
-           // ImageView image = (ImageView) v.findViewById(R.id.imageView2);
 
-           // image.setImageBitmap(Book.getPhoto(bookobj.get("ISBN")));
             new AsyncTask<Void,Void,Bitmap>(){
                 @Override
                 protected Bitmap doInBackground(Void... params) {

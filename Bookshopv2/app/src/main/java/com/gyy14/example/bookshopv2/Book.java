@@ -28,20 +28,6 @@ public class Book extends HashMap<String,String> {
         put("Price", price);
     }
 
-
-
-//    public static List<String> listBook() {
-//        List<String> list = new ArrayList<String>();
-//        try {
-//            JSONArray a = JSONParser.getJSONArrayFromUrl(host);
-//            for (int i=0; i<a.length(); i++) {
-//                String b = a.getString(i);
-//                list.add(b);
-//            }
-//        } catch (Exception e) {
-//        }
-//        return list;
-//    }
 public static List<Book> listBook(){
     List<Book> book = new ArrayList<Book>();
     JSONArray a = JSONParser.getJSONArrayFromUrl(host);
@@ -69,21 +55,6 @@ public static List<Book> listBook(){
         return(null);
     }
 
-//    public static Book getBook(String isbn) {
-//        Book book = null;
-//        try {
-//            JSONObject b = JSONParser.getJSONFromUrl(host+"/"+isbn);
-//            book = new Book(b.getString("ISBN"),
-//                    b.getString("Title"),
-//                    b.getString("CategoryID"),
-//                    Integer.toString(b.getInt("BookId")),
-//                    b.getString("Author"),
-//                    Integer.toString(b.getInt("Stock")),
-//                    Double.toString(b.getDouble("Price")));
-//        } catch (Exception e) {
-//        }
-//        return book;
-//    }
 public static List<Book> SearchBooks(String searchquery){
     List<Book> book = new ArrayList<Book>();
     JSONArray a = JSONParser.getJSONArrayFromUrl(host + "/search/" + searchquery );

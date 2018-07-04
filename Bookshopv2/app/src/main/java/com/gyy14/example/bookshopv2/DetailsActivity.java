@@ -10,8 +10,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 
 public class DetailsActivity extends Activity {
-//    final static int []view = {R.id.editText1, R.id.editText2, R.id.editText3, R.id.editText4, R.id.editText5, R.id.editText6, R.id.editText7};
-//    final static String []key = {"BookID", "Title", "CategoryID", "ISBN", "Author", "Stock", "Price"};
 
     @SuppressLint("StaticFieldLeak")
     @Override
@@ -19,20 +17,6 @@ public class DetailsActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
         String item = getIntent().getExtras().getString("BookID");
-//        new AsyncTask<String, Void, Book>() {
-//            @Override
-//            protected Book doInBackground(String... params) {
-//                return Book.getBook(params[0]);
-//            }
-//            @Override
-//            protected void onPostExecute(Book result) {
-//                for (int i=0; i<view.length; i++) {
-//                    EditText t = (EditText) findViewById(view[i]);
-//                    t.setText(result.get(key[i]));
-//                }
-//            }
-//        }.execute(item);
-
         StrictMode.setThreadPolicy(StrictMode.ThreadPolicy.LAX);
         Intent i = getIntent();
         String bookid = i.getStringExtra("bookid");

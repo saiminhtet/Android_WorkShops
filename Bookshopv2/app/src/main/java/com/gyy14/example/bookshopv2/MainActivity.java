@@ -33,7 +33,7 @@ public class MainActivity extends Activity {
          }
          @Override
          protected void onPreExecute() {
-             Log.i("Async-Example", "onPreExecute Called");
+
              simpleWaitDialog =  ProgressDialog.show(MainActivity.this,
                      "Wait", "Downloading ");
 
@@ -59,28 +59,6 @@ public class MainActivity extends Activity {
          }
      }.execute();
  }
-//@Override
-//protected void onCreate(Bundle savedInstanceState) {
-//    super.onCreate(savedInstanceState);
-//    setContentView(R.layout.activity_main);
-//    StrictMode.setThreadPolicy(StrictMode.ThreadPolicy.LAX);
-//    List<Book> books = Book.listBook();
-//    final ListView lv1 = (ListView) findViewById(R.id.book_list);
-////        BookAdapter adapter = new BookAdapter(this, R.layout.listview, books);
-////        //setListAdapter(adapter);
-//    lv1.setAdapter(new BookAdapter(this, R.layout.row, books));
-//
-//    lv1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//        @Override
-//        public void onItemClick(AdapterView<?> a, View v, int position, long id) {
-//            Object bookobject = lv1.getItemAtPosition(position);
-//            Book booksitem = (Book) bookobject;
-//            Intent intent = new Intent(getApplicationContext(),DetailsActivity.class);
-//            intent.putExtra("bookid", booksitem.get("BookID"));
-//            startActivity(intent);
-//        }
-//    });
-//}
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
